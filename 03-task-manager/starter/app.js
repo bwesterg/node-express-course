@@ -1,5 +1,5 @@
-console.log('Task Manager App test');
-
+// console.log('Task Manager App test');
+require('./db/connect')
 const express = require('express');
 const app = express();
 const tasks = require('./routes/tasks')
