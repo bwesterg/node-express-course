@@ -1,11 +1,18 @@
 const mongoose = require('mongoose')
 
-const connectionString = 
-    'mongodb+srv://bentonwestergaard:ldNfPsRsad8iubEq@cluster0.na36vha.mongodb.net/?retryWrites=true&w=majority'
+// const connectionString = 
+//     ''
 
-mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('CONnected to the db...'))
-    .catch((err) => console.log(err))
+const connectDB = (url) => {
+    return mongoose.connect(url, { 
+        useNewUrlParser: true, 
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    })
+}
+
+module.exports = connectDB
 
 
-    // mongodb+srv://bentonwestergaard:ldNfPsRsad8iubEq@cluster0.na36vha.mongodb.net/?retryWrites=true&w=majority
+
